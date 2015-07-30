@@ -69,7 +69,7 @@ module Arcgis
       def item_add(options={})
         options = options.dup
         username = options.delete(:username) || "%username%"
-        options[:file] = File.open(options.delete[:file]) if options.include?(:file) && options[:file].is_a?(String)
+        options[:file] = File.open(options.delete(:file)) if options.include?(:file) && options[:file].is_a?(String)
         post("/content/users/#{username}/addItem",options)
       end
 
